@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Blog · Arthur Ramos">
+  <style>
+    .page-header {
+      padding: 96px 48px 64px;
+      border-bottom: 0.5px solid var(--borda);
+    }
+
+    .page-title {
+      font-size: 56px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-desc {
+      font-size: 18px;
+      color: var(--concreto);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .post-list { padding: 0 48px; }
+
+    .post-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+      border-bottom: 0.5px solid var(--borda);
+      align-items: start;
+    }
+
+    .post-item:hover .post-title { color: var(--tijolo); }
+
+    .post-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: 6px;
+    }
+
+    .post-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--tijolo);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .post-title {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      line-height: 1.15;
+      transition: color 0.2s;
+    }
+
+    .post-desc {
+      font-size: 16px;
+      color: var(--concreto);
+      line-height: 1.65;
+    }
+
+    .empty-state {
+      padding: 96px 48px;
+      text-align: center;
+      color: var(--concreto);
+    }
+
+    .empty-title {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .empty-desc { font-size: 16px; }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 48px 24px; }
+      .post-list { padding: 0 24px; }
+      .post-item { grid-template-columns: 1fr; gap: 8px; }
+      .page-title { font-size: 36px; }
+    }
+  </style>
+
+  <div class="page-header">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-desc">
+      Pensamento em desenvolvimento sobre proteção digital, política pública de tecnologia, 
+      equidade algorítmica e inteligência artificial responsável.
+    </p>
+  </div>
+
+  <div class="post-list">
+    <article class="post-item">
+      <div class="post-date">Em breve</div>
+      <div>
+        <div class="post-tag">Regulação</div>
+        <h2 class="post-title">ECA Digital: da lei à implementação técnica</h2>
+        <p class="post-desc">Como arquitetar sistemas que satisfazem Lei 15.211/2025 sem comprometer performance ou privacidade. Análise de cinco caminhos arquiteturais.</p>
+      </div>
+    </article>
+    <article class="post-item">
+      <div class="post-date">Rascunho</div>
+      <div>
+        <div class="post-tag">Equidade</div>
+        <h2 class="post-title">O Equity Paradox em sistemas de proteção digital</h2>
+        <p class="post-desc">Por que meninas são 25% subdetectadas em modelos de risco e três arquiteturas que resolvem o problema sem sacrificar privacidade.</p>
+      </div>
+    </article>
+    <article class="post-item">
+      <div class="post-date">Rascunho</div>
+      <div>
+        <div class="post-tag">Pesquisa</div>
+        <h2 class="post-title">Federated learning para quem não é engenheiro</h2>
+        <p class="post-desc">Uma explicação honesta do que é, o que resolve e o que não resolve. Para reguladores, advogados e quem toma decisão sobre tecnologia.</p>
+      </div>
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,134 @@
+---
+const { title = 'Arthur Ramos', description = 'Pesquisador em proteção digital e aprendizado federado' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:site_name" content="Arthur Ramos Santos" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ArthurRamosSaan" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --tijolo: #9C3D2E;
+      --carvao: #1A1A1A;
+      --concreto: #5A4A3A;
+      --papel: #FDFBF7;
+      --borda: #E0D9D0;
+      --muted: #888780;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--papel);
+      color: var(--carvao);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--tijolo); }
+
+    nav {
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 0.5px solid var(--borda);
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo span {
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--concreto);
+      margin-left: 12px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--concreto);
+    }
+
+    .nav-links a:hover { color: var(--tijolo); }
+
+    main { min-height: 80vh; }
+
+    footer {
+      border-top: 0.5px solid var(--borda);
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a:hover { color: var(--tijolo); }
+
+    @media (max-width: 768px) {
+      nav { padding: 24px; flex-direction: column; gap: 16px; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo" style="text-decoration:none;color:inherit;">
+      Arthur Ramos
+      <span>Pesquisador · Proteção Digital</span>
+    </a>
+    <div class="nav-links">
+      <a href="/research">Pesquisa</a>
+      <a href="/blog">Blog</a>
+      <a href="/sobre">Sobre</a>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    <span>arthuramossantos.dev · ORCID 0009-0004-5242-8284</span>
+    <div class="footer-links">
+      <a href="https://twitter.com/ArthurRamosSaan" target="_blank">Twitter</a>
+      <a href="https://github.com/zrur" target="_blank">GitHub</a>
+      <a href="mailto:arthur@arthuramossantos.dev">Email</a>
+    </div>
+  </footer>
+</body>
+</html>

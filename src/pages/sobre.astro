@@ -1,0 +1,144 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Sobre · Arthur Ramos">
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .about-left {
+      padding: 96px 48px;
+      border-right: 0.5px solid var(--borda);
+    }
+
+    .about-right {
+      padding: 96px 48px;
+    }
+
+    .about-title {
+      font-size: 56px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 32px;
+    }
+
+    .about-title em {
+      font-style: italic;
+      color: var(--tijolo);
+    }
+
+    .about-bio {
+      font-size: 17px;
+      color: var(--concreto);
+      line-height: 1.8;
+    }
+
+    .about-bio p { margin-bottom: 20px; }
+
+    .info-section { margin-bottom: 48px; }
+
+    .info-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--tijolo);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 0.5px solid var(--borda);
+    }
+
+    .info-list {
+      list-style: none;
+      font-size: 16px;
+      color: var(--concreto);
+    }
+
+    .info-list li {
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--borda);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .info-list li:last-child { border-bottom: none; }
+
+    .info-list .year {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-left { padding: 48px 24px; border-right: none; border-bottom: 0.5px solid var(--borda); }
+      .about-right { padding: 48px 24px; }
+      .about-title { font-size: 36px; }
+    }
+  </style>
+
+  <div class="about-grid">
+    <div class="about-left">
+      <h1 class="about-title">
+        Proteção<br />
+        digital de<br />
+        <em>menores</em>
+      </h1>
+      <div class="about-bio">
+        <p>
+          Pesquiso como sistemas de inteligência artificial podem proteger crianças e adolescentes 
+          em ambientes digitais sem comprometer privacidade — e sem criar novas formas de vigilância.
+        </p>
+        <p>
+          Meu trabalho central é o SENTINELA-TREVO: um framework de federated learning que detecta 
+          comportamentos de risco em menores processando dados inteiramente no dispositivo do usuário, 
+          sem transmitir informações pessoais a servidores centrais.
+        </p>
+        <p>
+          Uma das contribuições que formalizo é o Equity Paradox — a observação de que modelos 
+          treinados em populações mistas subdetectam perfis de risco femininos em 25%, tornando 
+          sistemas de proteção "neutros" sistematicamente injustos. Proponho correções via CVaR-DRO.
+        </p>
+        <p>
+          Contribuo com reguladores e processos de consulta pública sobre proteção de dados de 
+          crianças, traduzindo pesquisa técnica em métricas operacionais que a lei pode exigir.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="info-section">
+        <div class="info-label">Publicações e contribuições</div>
+        <ul class="info-list">
+          <li>
+            <span>SENTINELA-TREVO v10 · SSRN 6461080</span>
+            <span class="year">2026</span>
+          </li>
+          <li>
+            <span>Contribuição ANPD · Tomada de Subsídios</span>
+            <span class="year">2026</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <div class="info-label">Contato</div>
+        <ul class="info-list">
+          <li>
+            <span>arthuramossan@gmail.com</span>
+          </li>
+          <li>
+            <span>ORCID 0009-0004-5242-8284</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Base>

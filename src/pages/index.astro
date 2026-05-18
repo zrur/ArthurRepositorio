@@ -1,0 +1,243 @@
+---
+import Base from '../layouts/Base.astro';
+
+const research = [
+  {
+    category: 'Framework',
+    title: 'SENTINELA-TREVO',
+    desc: 'Federated learning para detecção de comportamento de risco em menores, preservando privacidade e garantindo equidade algorítmica.',
+    meta: 'v10 · 2026 · SSRN 6461080',
+    href: '/research'
+  },
+  {
+    category: 'Metodologia',
+    title: 'PRISM',
+    desc: 'Segmentação comportamental on-device usando DBSCAN, executado localmente sem exposição de dados pessoais.',
+    meta: 'Formalizado em SENTINELA-TREVO v10',
+    href: '/research'
+  },
+  {
+    category: 'Proposição teórica',
+    title: 'Equity Paradox',
+    desc: 'Formalização do viés diferencial: 25% de underdetecção em meninas em sistemas de proteção. Proposição 1 em SENTINELA-TREVO v10.',
+    meta: 'n=1.797 · Balanced Accuracy 98,16%',
+    href: '/research'
+  },
+  {
+    category: 'Contribuição regulatória',
+    title: 'Tomada de Subsídios ANPD',
+    desc: 'Proposta de métricas operacionais para avaliação de equidade algorítmica sob ECA Digital e Lei 15.211/2025.',
+    meta: 'Enviado · 2026',
+    href: '/research'
+  }
+];
+---
+
+<Base>
+  <style>
+    .hero {
+      padding: 128px 48px 96px;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--tijolo);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--tijolo);
+    }
+
+    .hero-desc {
+      font-size: 20px;
+      color: var(--concreto);
+      max-width: 600px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .section {
+      padding: 96px 48px;
+      border-top: 0.5px solid var(--borda);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    .section-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--tijolo);
+    }
+
+    .section-link:hover { text-decoration: underline; }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 0.5px solid var(--borda);
+    }
+
+    .research-item {
+      padding: 40px;
+      border-right: 0.5px solid var(--borda);
+      border-bottom: 0.5px solid var(--borda);
+      transition: background 0.2s;
+    }
+
+    .research-item:hover { background: white; }
+    .research-item:nth-child(2n) { border-right: none; }
+    .research-item:nth-child(3),
+    .research-item:nth-child(4) { border-bottom: none; }
+
+    .item-category {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--tijolo);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .item-title {
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .item-desc {
+      font-size: 15px;
+      color: var(--concreto);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .item-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .blog-list { display: flex; flex-direction: column; gap: 0; }
+
+    .blog-item {
+      padding: 40px 0;
+      border-bottom: 0.5px solid var(--borda);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .blog-item:first-child { border-top: 0.5px solid var(--borda); }
+
+    .blog-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: 6px;
+    }
+
+    .blog-title {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .blog-desc {
+      font-size: 16px;
+      color: var(--concreto);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 64px 24px 48px; }
+      .section { padding: 64px 24px; }
+      .research-grid { grid-template-columns: 1fr; }
+      .research-item { border-right: none; }
+      .research-item:nth-child(3) { border-bottom: 0.5px solid var(--borda); }
+      .blog-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+
+  <section class="hero">
+    <p class="hero-label">Pesquisa em proteção digital</p>
+    <h1 class="hero-title">
+      Tecnologia que<br />
+      protege <em>sem vigiar</em>
+    </h1>
+    <p class="hero-desc">
+      Pesquisa em aprendizado federado, equidade algorítmica e proteção digital de menores. 
+      Desenvolvendo frameworks que fazem a lei funcionar sem comprometer privacidade.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Pesquisa</h2>
+      <a href="/research" class="section-link">Ver tudo →</a>
+    </div>
+    <div class="research-grid">
+      {research.map(item => (
+        <a href={item.href} class="research-item">
+          <div class="item-category">{item.category}</div>
+          <h3 class="item-title">{item.title}</h3>
+          <p class="item-desc">{item.desc}</p>
+          <div class="item-meta">{item.meta}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Blog</h2>
+      <a href="/blog" class="section-link">Ver tudo →</a>
+    </div>
+    <div class="blog-list">
+      <article class="blog-item">
+        <div class="blog-date">Em breve</div>
+        <div>
+          <h3 class="blog-title">ECA Digital: da lei à implementação técnica</h3>
+          <p class="blog-desc">Como arquitetar sistemas que satisfazem Lei 15.211/2025 sem comprometer performance ou privacidade.</p>
+        </div>
+      </article>
+      <article class="blog-item">
+        <div class="blog-date">Rascunho</div>
+        <div>
+          <h3 class="blog-title">O Equity Paradox em sistemas de proteção</h3>
+          <p class="blog-desc">Por que meninas são 25% subdetectadas e três arquiteturas que resolvem.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Base>
