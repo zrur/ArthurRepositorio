@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Blog · Arthur Ramos" description="Artigos sobre aprendizado federado, equidade algorítmica e proteção digital de menores.">
+  <style>
+    .page-header {
+      padding: 96px 48px 64px;
+      border-bottom: 0.5px solid var(--borda);
+    }
+
+    .page-title {
+      font-size: 56px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-desc {
+      font-size: 18px;
+      color: var(--concreto);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .blog-list {
+      padding: 0 48px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-item {
+      padding: 48px 0;
+      border-bottom: 0.5px solid var(--borda);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .blog-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: 6px;
+    }
+
+    .blog-title {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .blog-desc {
+      font-size: 17px;
+      color: var(--concreto);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 48px 24px; }
+      .page-title { font-size: 36px; }
+      .blog-list { padding: 0 24px; }
+      .blog-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+
+  <div class="page-header">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-desc">
+      Escrita sobre os problemas que a pesquisa levanta — técnicos, regulatórios e conceituais.
+    </p>
+  </div>
+
+  <div class="blog-list">
+    <article class="blog-item">
+      <div class="blog-date">Em breve</div>
+      <div>
+        <h2 class="blog-title">ECA Digital: da lei à implementação técnica</h2>
+        <p class="blog-desc">Como arquitetar sistemas que satisfazem Lei 15.211/2025 sem comprometer performance ou privacidade.</p>
+      </div>
+    </article>
+    <article class="blog-item">
+      <div class="blog-date">Rascunho</div>
+      <div>
+        <h2 class="blog-title">O Equity Paradox em sistemas de proteção</h2>
+        <p class="blog-desc">Por que meninas são 25% subdetectadas e três arquiteturas que resolvem.</p>
+      </div>
+    </article>
+  </div>
+</Base>

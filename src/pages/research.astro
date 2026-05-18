@@ -1,0 +1,191 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Pesquisa · Arthur Ramos">
+  <style>
+    .page-header {
+      padding: 96px 48px 64px;
+      border-bottom: 0.5px solid var(--borda);
+    }
+
+    .page-title {
+      font-size: 56px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-desc {
+      font-size: 18px;
+      color: var(--concreto);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .research-section {
+      padding: 64px 48px;
+      border-bottom: 0.5px solid var(--borda);
+    }
+
+    .research-section:last-child { border-bottom: none; }
+
+    .category-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--tijolo);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+
+    .research-title {
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .research-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .research-body {
+      font-size: 18px;
+      color: var(--concreto);
+      max-width: 680px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .research-stats {
+      display: flex;
+      gap: 48px;
+      padding: 24px 0;
+      border-top: 0.5px solid var(--borda);
+    }
+
+    .stat { display: flex; flex-direction: column; gap: 4px; }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--carvao);
+    }
+
+    .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--tijolo);
+      border: 0.5px solid var(--tijolo);
+      padding: 8px 20px;
+      margin-top: 24px;
+    }
+
+    .pub-link:hover {
+      background: var(--tijolo);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .page-header, .research-section { padding: 48px 24px; }
+      .page-title { font-size: 36px; }
+      .research-title { font-size: 28px; }
+      .research-stats { flex-wrap: wrap; gap: 24px; }
+    }
+  </style>
+
+  <div class="page-header">
+    <h1 class="page-title">Pesquisa</h1>
+    <p class="page-desc">
+      Trabalho na intersecção de aprendizado federado, equidade algorítmica e proteção digital de menores.
+      Objetivo: tecnologia que faz a lei funcionar sem comprometer privacidade.
+    </p>
+  </div>
+
+  <div class="research-section">
+    <div class="category-label">Framework · Em andamento</div>
+    <h2 class="research-title">SENTINELA-TREVO</h2>
+    <div class="research-meta">v10 · 2026 · SSRN Abstract ID 6461080 · ORCID 0009-0004-5242-8284</div>
+    <p class="research-body">
+      Framework de federated learning para detecção comportamental de exposição a risco em menores,
+      com garantias formais de privacidade e equidade. Incorpora o método PRISM para segmentação
+      on-device e formaliza o Equity Paradox como Proposição 1.
+    </p>
+    <div class="research-stats">
+      <div class="stat">
+        <span class="stat-value">98,16%</span>
+        <span class="stat-label">Balanced Accuracy</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">0,9978</span>
+        <span class="stat-label">AUC ROC</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">1.797</span>
+        <span class="stat-label">usuários out-of-sample</span>
+      </div>
+    </div>
+    <a href="https://ssrn.com/abstract=6461080" target="_blank" class="pub-link">
+      Ver no SSRN →
+    </a>
+  </div>
+
+  <div class="research-section">
+    <div class="category-label">Metodologia</div>
+    <h2 class="research-title">PRISM</h2>
+    <div class="research-meta">Privacy-preserving on-device behavioral segmentation · 2026</div>
+    <p class="research-body">
+      Técnica de segmentação comportamental que roda inteiramente no dispositivo do usuário usando DBSCAN.
+      Nunca expõe dados brutos. Formalizado em SENTINELA-TREVO v10 como contribuição metodológica original.
+    </p>
+  </div>
+
+  <div class="research-section">
+    <div class="category-label">Proposição teórica</div>
+    <h2 class="research-title">Equity Paradox</h2>
+    <div class="research-meta">Proposição 1 · SENTINELA-TREVO v10 · 2026</div>
+    <p class="research-body">
+      Formalização do viés diferencial em sistemas de detecção de risco: modelos treinados em populações
+      mistas subdetectam perfis de risco femininos em 25%. Implica que sistemas de proteção "neutros"
+      podem ser sistematicamente injustos. Proposta de correção via CVaR-DRO.
+    </p>
+    <div class="research-stats">
+      <div class="stat">
+        <span class="stat-value">25%</span>
+        <span class="stat-label">Underdetecção FNR_F</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">0,0532</span>
+        <span class="stat-label">Δ_EO após correção</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-section">
+    <div class="category-label">Contribuição regulatória</div>
+    <h2 class="research-title">Tomada de Subsídios ANPD</h2>
+    <div class="research-meta">Guia Orientativo · Lei 15.211/2025 · 2026</div>
+    <p class="research-body">
+      Contribuição técnica ao processo de consulta pública da ANPD sobre proteção de dados de crianças
+      e adolescentes. Propõe métricas operacionais para avaliação de equidade algorítmica, incluindo
+      implementação de Equalized Odds em contexto regulatório brasileiro.
+    </p>
+  </div>
+</Base>
