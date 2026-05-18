@@ -1,6 +1,7 @@
 ---
 const { title = 'Arthur Ramos', description = 'Pesquisador em proteção digital e aprendizado federado' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -107,14 +108,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </head>
 <body>
   <nav>
-    <a href="/" class="nav-logo" style="text-decoration:none;color:inherit;">
+    <a href={base} class="nav-logo" style="text-decoration:none;color:inherit;">
       Arthur Ramos
       <span>Pesquisador · Proteção Digital</span>
     </a>
     <div class="nav-links">
-      <a href="/research">Pesquisa</a>
-      <a href="/blog">Blog</a>
-      <a href="/sobre">Sobre</a>
+      <a href={`${base}research`}>Pesquisa</a>
+      <a href={`${base}blog`}>Blog</a>
+      <a href={`${base}sobre`}>Sobre</a>
     </div>
   </nav>
 
